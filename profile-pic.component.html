@@ -1,0 +1,26 @@
+  <div>
+          <h2>my profile picture here</h2>
+    <!-- <p>pr{{myface}}</p> -->
+    <img class="float_left" [src]=myface alt="this is my face">
+    <img class="float_left" src={{myface}} alt="this is my face">
+    <br><br><br><br>
+    <h3>faq</h3>
+    <p>, what do you want to know about me?
+    here are some frequently asked questions:</p><br><br>
+    <ul>
+
+      <li *ngFor="let x of questions">{{x}}</li>
+
+    </ul>
+    <!-- {{data}} -->
+
+    is there ar question i missed? please write beow
+     what do wou want to know<br>
+     <br>
+     <h2>{{subResponse}}</h2>
+     <input #newQuestion type="text" value="{{myString}}"/>
+     <br> your question is: {{askedQuestion}} <br>
+    <button  (click)="inputQuestion($event,newQuestion.value)" [disabled]="!allowNewServer"
+      class="btn btn-primary">submit question</button>
+  <!-- <p>servernumber {{serverId}}____ is{{serverStatus}} _____{{getServerStatus}}</p> -->
+  </div>
