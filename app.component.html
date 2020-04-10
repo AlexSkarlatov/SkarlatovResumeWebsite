@@ -1,23 +1,46 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
+<div>
+  <app-contact></app-contact>
 
-
-
-      <div>
-        <div class="float_left">
+    <div class="float_left">
           <app-nav></app-nav>
-        </div>
-
-
-        <app-contact></app-contact>
-        <div class="float_right">
+    </div>
+    <div class="clear">
           <app-profile-pic></app-profile-pic>
           <app-main></app-main>
           <app-education></app-education>
           <app-experience></app-experience>
-        </div>
+          <label for="">server maker</label>
+          <input type="text"
+          class="form-control"
+          [(ngModel)]="serverName">
+          <button
+          class="btn btn-primary"
+          [disabled]="allowNewServer"
+          (click)="onCreateServer()">add server</button>
+          <p *ngIf="serverCreated === true">server is created , server name is {{serverID}}{{serverName}}</p>
+          <ng-template #noServer><p> using an else statement? what is a local reference or a marker</p>
+          </ng-template>
+          <p *ngIf="serverCreated"; else noServer>server is created , server name is {{serverID}}{{serverName}}</p>
+          <p [ngStyle]="{backgroundColor: getColor()}"
+          [ngClass]="{online: serverStatus === 'online'}">server is created , server name is {{serverID}}{{serverName}}</p>
+
+
+          <p>to better layout these project i have been advised to look at these resources by a helpful member of the discord community i am engraving the links into my project so i dont lose track of <link rel="import" href="">
+            here are the links
+            <ol>
+              <li>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</li>
+              <li>youtube angular flex layout</li>
+              <li>https://github.com/angular/flex-layout/wiki</li>
+              <li>https://tburleson-layouts-demos.firebaseapp.com/#/stackoverflow</li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ol>
+            https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+          
+
       </div>
-    </div>
-  </div>
 </div>
+
+<!-- ngclasss is binded to the ts property of class object from css the propety binding is ngclass property being bounded to like  a ts or css object -->
